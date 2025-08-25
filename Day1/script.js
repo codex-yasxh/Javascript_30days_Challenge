@@ -1,37 +1,33 @@
-// Select all the keys
-const keys = document.querySelectorAll(".key");
 
-// Play sound when key pressed or button clicked
-function playSound(keyCode) {
-  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${keyCode}"]`);
 
-  if (!audio) return; // stop if no matching sound
+var number = 10 
+console.log(number)
 
-  audio.currentTime = 0; // rewind to start so it can retrigger
-  audio.play();
+let string = "aditya"
+console.log(string)
 
-  key.classList.add("playing");
-}
+const boolValue = true
+console.log(boolValue)
 
-// Remove animation after it finishes
-function removeTransition(e) {
-  if (e.propertyName !== "transform") return; // only catch transform
-  this.classList.remove("playing");
-}
+const value = 10
+console.log(typeof value)
 
-// 1. Listen for key presses
-window.addEventListener("keydown", (e) => {
-  playSound(e.keyCode);
-});
+let reAssign = "aditya"
+console.log(reAssign)
+reAssign = "yash"
+console.log(reAssign);
 
-// 2. Listen for button clicks
-keys.forEach((key) => {
-  key.addEventListener("click", () => {
-    const keyCode = key.getAttribute("data-key");
-    playSound(keyCode);
-  });
+const tryingAssignment = 42
+console.log(tryingAssignment);
+tryingAssignment = 56
+console.log(tryingAssignment); // const is never made for reassignment 
 
-  // remove animation after transition
-  key.addEventListener("transitionend", removeTransition);
-});
+// Use let by default for block-scoped variables
+// Use const for values that won't be reassigned
+// Avoid var in modern JavaScript unless you specifically need function scoping
+// let helps prevent common bugs related to scope and hoisting
+
+// The introduction of let (and const) in ES6 solved many of the confusing behaviors associated with var and made JavaScript code more predictable and easier to debug.
+
+
+
